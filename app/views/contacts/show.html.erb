@@ -1,0 +1,12 @@
+
+<h2>Your Contact: <%= @contact.full_name %></h2>
+<h3>Phone #: <%= @contact.phone_number %></h3>
+<h3>Email: <%= @contact.email %></h3>
+
+<div>
+<%= link_to "Edit Contact", "/contacts/#{ @contact.id }/edit", class: "btn btn-warning" %>
+</div>
+
+<div>
+<%= link_to "Delete Contacts", "/contacts/#{ @contact.id }", method: :delete, class: "btn btn-danger" %>
+</div>

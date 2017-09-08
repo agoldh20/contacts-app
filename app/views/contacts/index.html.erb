@@ -1,7 +1,7 @@
 <h1>Little Book of Contacts</h1>
 
 <% @contacts.each do |contact| %>
-  <h2>Your Contact: <%= contact.full_name %></h2>
+  <h2>Your Contact: <a href="/contacts/<%= contact.id %>"><%= contact.full_name %></a></h2>
   <h3>Phone #: <%= contact.phone_number %></h3>
   <h3>Email: <%= contact.email %></h3>
 <% end %>

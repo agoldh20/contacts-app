@@ -30,22 +30,23 @@ class ContactsController < ApplicationController
    def update
      contact = Contact.find(params[:id])
 
-     contacts.assign_attributes(
+     contact.assign_attributes(
                           first_name: params[:first_name],
-                          middle_name: params[:middle_name]
+                          middle_name: params[:middle_name],
                           last_name: params[:last_name],
                           email: params[:email],
                           phone_number: params[:phone_number]
                           )
-    contacts.save
+    contact.save
     flash[:success] = "Upated Complete"
-    redirect_to "/contacts/#{contacts.id}"
+    redirect_to "/contacts/#{contact.id}"
    end
 
    def destroy
     contact = Contact.find(params[:id])
-    contacts.destroy
+    contact.destroy
     flash[:danger] = "#{contact.first_name} #{contact.last_name} has been removed"
+    redirect_to "/"
    end
 end
 
