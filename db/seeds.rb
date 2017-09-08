@@ -1,17 +1,13 @@
+100.times do 
+first_name = Faker::Name.first_name
+last_name = Faker::Name.last_name
+
 contact = Contact.new(
-                      first_name: "Peter",
-                      last_name: "Griffin",
-                      email: "Peter.Griffin@gmail.com",
-                      phone_number: "123-456-7890"
+                      first_name: first_name,
+                      last_name: last_name,
+                      email: Faker::Internet.free_email("#{first_name}.#{last_name}"),
+                      phone_number: Faker::PhoneNumber.phone_number
                       )
 
 contact.save
-
-contact = Contact.new(
-                      first_name: "Bugs",
-                      last_name: "Bunny",
-                      email: "Carrot.doc@gmail.com",
-                      phone_number: "234-567-8912"
-                      )
-
-contact.save
+end

@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  get '/first_contact_url' => 'contacts#first_contact_action'
+  get '/' => 'contacts#index'
+
+  get '/contacts/new' => 'contacts#new' 
+  post '/contacts' => 'contacts#create'
+
+  get '/contacts/:id' => 'contacts#show'
+
+  get '/contacts/:id/edit' => 'contacts#edit'
+  patch '/contacts/:id' => 'contacts#update'
+
+  delete 'contacts/:id'=> 'conatcts#destroy'
 end
