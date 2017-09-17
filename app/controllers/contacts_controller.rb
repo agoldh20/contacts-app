@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
                           phone_number: params[:phone_number]
                           )
     contacts.save
+    flash[:success] = "New Contact Created"
     redirect_to "/contacts/#{contacts.id}"
    end
 
